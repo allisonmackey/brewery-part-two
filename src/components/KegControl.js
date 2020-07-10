@@ -77,6 +77,7 @@ class KegControl extends React.Component {
       currentVisibleState = <KegDetail 
         keg = {this.props.masterKegList[`${this.props.selectedKeg}`]}
         deleteKeg = {this.handleDeletingKeg}
+        buyPint = {this.handleBuyingPint}
       />
       
       button1 = this.kegListButtonClick;
@@ -96,7 +97,6 @@ class KegControl extends React.Component {
       currentVisibleState = <KegList 
         kegList = {this.props.masterKegList} 
         onKegSelection={this.handleChangingSelectedKeg}
-        buyingPint = {this.handleBuyingPint}
       />
       header = "MENU"
       button1 = this.landingPageButtonClick; 
