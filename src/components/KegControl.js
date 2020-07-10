@@ -8,12 +8,6 @@ import PropTypes from 'prop-types';
 import * as a from './../actions';
 
 class KegControl extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedKeg: null
-    };
-  }
   
   landingPageButtonClick = () => {
     const {dispatch} = this.props;
@@ -69,12 +63,12 @@ class KegControl extends React.Component {
     let button1Text = null;
     let button2 = null;
     let header = null;
+   
     // let button2Text = null;
 
     if (this.props.selectedKeg != null) {
       currentVisibleState = <KegDetail 
-      keg = {this.props.selectedKeg}/>
-      console.log("keg: ", keg)
+      keg = {this.props.masterKegList[`${this.props.selectedKeg}`]}/>
       button1 = this.kegListButtonClick;
       button1Text = "Return to Keg List";
     }
