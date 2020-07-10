@@ -1,7 +1,7 @@
 import * as c from './../actions/ActionTypes';
 
 export default (state = null, action) => {
-  const {id} = action;
+  const {id } = action;
   switch (action.type) {
     case c.SELECTED_KEG: 
       state = id
@@ -11,5 +11,4 @@ export default (state = null, action) => {
       return state;
     default: return state; 
   }
-  
 }

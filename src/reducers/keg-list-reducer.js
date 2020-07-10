@@ -39,7 +39,6 @@ export default (state = {
         }
       })
     case "BUY_PINT":
-      console.log("state id:", state[id].id)
       return Object.assign({}, state, {
         [id]: {
           ...state[id],
