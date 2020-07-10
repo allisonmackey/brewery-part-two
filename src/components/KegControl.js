@@ -50,12 +50,21 @@ class KegControl extends React.Component {
     dispatch(action2)
   }
 
+  handleDeletingKeg = (id) => {
+    const {dispatch} = this.props;
+    const action = a.deleteKeg(id);
+    dispatch(action)
+    const action2 = a.seeKegList()
+    dispatch(action2)
+    const action3 = a.unselectKeg()
+    dispatch(action3)
+  }
+
   handleBuyingPint = (keg) => {
     const {dispatch} = this.props;
     const action = a.buyPint(keg) 
     dispatch(action)
   }
-
 
   render () {
     let currentVisibleState = null;
@@ -66,7 +75,10 @@ class KegControl extends React.Component {
    
     if (this.props.selectedKeg != null) {
       currentVisibleState = <KegDetail 
-      keg = {this.props.masterKegList[`${this.props.selectedKeg}`]}/>
+        keg = {this.props.masterKegList[`${this.props.selectedKeg}`]}
+        deleteKeg = {this.handleDeletingKeg}
+      />
+      
       button1 = this.kegListButtonClick;
       button1Text = "Return to Keg List";
     }
