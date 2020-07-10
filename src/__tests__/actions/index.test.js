@@ -26,4 +26,10 @@ describe('brewery actions', () => {
       type: 'KEG_LIST'
     });
   });
+
+  it('seeLandingPage should create a LANDING_PAGE action', () =>  {
+    expect(actions.seeLandingPage()).toEqual({
+      type: 'LANDING_PAGE'
+    });
+  });
 })
