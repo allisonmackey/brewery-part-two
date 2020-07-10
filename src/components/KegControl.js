@@ -9,38 +9,7 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: 'landing-page',
-      selectedKeg: null,
-      kegList: [
-        { name: "Mo-haze-ic IPA",
-          brand: "Migration Brewery",
-          price: 170,
-          alcoholContent: 6.1,
-          pintsLeft: 124,
-          id: 1
-        },
-        { name: "Starburst IPA",
-          brand: "Ecliptic Brewing",
-          price: 180,
-          alcoholContent: 7.8,
-          pintsLeft: 124,
-          id: 2
-        },
-        { name: "IPA",
-          brand: "Bouy Beer Co.",
-          price: 150,
-          alcoholContent: 7.5,
-          pintsLeft: 124,
-          id: 3
-        },
-        { name: "Ranier",
-          brand: "Pabst Brewing",
-          price: 100,
-          alcoholContent: 4.73,
-          pintsLeft: 124,
-          id: 4
-        }
-      ]
+      selectedKeg: null
     };
   }
   //  eventual code for buying a pint? might need to go in kegList instead. 
