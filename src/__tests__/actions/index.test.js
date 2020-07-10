@@ -20,4 +20,10 @@ describe('brewery actions', () => {
       id: 4
     });
   });
+
+  it('see kegList should create a KEG_LIST action', () =>  {
+    expect(actions.seeKegList()).toEqual({
+      type: 'KEG_LIST'
+    });
+  });
 })
