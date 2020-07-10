@@ -3,7 +3,6 @@ import * as a from '../../actions'
 
 
 describe('selectedKegReducer', () => {
-  let action;
   const kegData= {
     id: 3
   }
@@ -13,5 +12,9 @@ describe('selectedKegReducer', () => {
   test('should return updated state with id when given action SELECT_KEG', () => {
     const {id} = kegData
     expect(selectedKegReducer(null, a.selectKeg(id))).toEqual(3)
+  })
+  test('should return updated state with id when given action UNSELECT_KEG', () => {
+    const {id} = kegData
+    expect(selectedKegReducer(null, a.unselectKeg())).toEqual(null)
   })
 })
