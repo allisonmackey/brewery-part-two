@@ -23,7 +23,7 @@ describe('kegListReducer', () => {
       id: id
     };
 
-    expect(kegListReducer({}, {action})).toEqual({
+    expect(kegListReducer({}, action)).toEqual({
       [id]: {
         name: name,
         brand: brand, 
