@@ -32,4 +32,10 @@ describe('brewery actions', () => {
       type: 'LANDING_PAGE'
     });
   });
+
+  it('seeForm should create a SEE_FORM action', () =>  {
+    expect(actions.seeForm()).toEqual({
+      type: 'SEE_FORM'
+    });
+  });
 })
