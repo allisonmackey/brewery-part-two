@@ -13,6 +13,19 @@ export const addKeg = (keg) => {
   }
 }
 
+export const buyPint = (keg) => {
+  const { name, brand, price, alcoholContent, pintsLeft, id} = keg;
+  return {
+    type: c.BUY_PINT,
+    name: name, 
+    brand: brand, 
+    price: price, 
+    alcoholContent: alcoholContent, 
+    pintsLeft: pintsLeft, 
+    id: id
+  }
+}
+
 export const seeKegList = () => ({
   type: c.KEG_LIST
 })

@@ -43,22 +43,6 @@ class KegControl extends React.Component {
     }
   }
 
-  // need to move to reducer/keg-list-reducer
-  // handleBuyingPint = (index) => {
-  //   const currentPints = [...this.state.kegList];
-  //   if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
-  //     currentPints[index].pintsLeft = "Out of Stock";
-  //     this.setState({
-  //       kegList: currentPints
-  //     });
-  //   } else {
-  //     currentPints[index].pintsLeft -= 1;
-  //     this.setState({
-  //       kegList: currentPints
-  //     });
-  //   }
-  // }
-
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.props.masterKegList[id]
     this.setState({
@@ -74,6 +58,14 @@ class KegControl extends React.Component {
     dispatch(action2)
   }
 
+  handleBuyingPint = (keg) => {
+    const {dispatch} = this.props;
+    const action = a.buyPint(keg) 
+    dispatch(action)
+    const action2 = a.seeKegList()
+    dispatch(action2)
+    this.forceUpdate()
+  }
 
 
   render () {

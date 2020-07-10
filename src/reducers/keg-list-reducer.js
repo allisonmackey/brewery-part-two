@@ -38,6 +38,17 @@ export default (state = {
           id: id
         }
       })
+    case "BUY_PINT":
+      return Object.assign({}, state, {
+        [id]: {
+          name: name, 
+          brand: brand, 
+          price: price, 
+          alcoholContent: alcoholContent, 
+          pintsLeft: pintsLeft -1, 
+          id: id
+        }
+      });
     default: return state;
   }
 }
