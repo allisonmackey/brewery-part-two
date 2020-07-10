@@ -3,7 +3,8 @@ import LandingPage from "./LandingPage";
 import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail"
-
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 class KegControl extends React.Component {
   constructor(props) {
@@ -12,6 +13,33 @@ class KegControl extends React.Component {
       selectedKeg: null
     };
   }
+  
+  landingPageButtonClick = () => {
+    this.setState({
+      formVisibleOnPage: "landing-page"
+    });
+  }
+
+  addKegButtonClick = () => {
+    this.setState({
+      formVisibleOnPage: "add-keg"
+    });
+  }
+
+
+  kegListButtonClick = () => {
+    if (this.state.selectedKeg != null) {
+      this.setState({
+        formVisibleOnPage: "keg-list",
+        selectedKeg: null
+      })
+    } else {
+      this.setState({
+        formVisibleOnPage: "keg-list"
+      });
+    }
+  }
+
   //  eventual code for buying a pint? might need to go in kegList instead. 
   handleBuyingPint = (index) => {
     const currentPints = [...this.state.kegList];
@@ -43,45 +71,7 @@ class KegControl extends React.Component {
     });
   }
 
-  // handleClick = () => {
-  //   if (this.state.selectedKeg != null) {
-  //     this.setState({
-  //       formVisibleOnPage: "keg-list",
-  //       selectedKeg: null
-  //     })
-  //     console.log(this.state.selectedKeg)
-  //   } 
-  //   else {
-  //     this.setState(prevState => ({
-  //       formVisibleOnPage: !prevState.formVisibleOnPage
-  //     }));
-  //   }
-  // }
 
-  landingPageButtonClick = () => {
-    this.setState({
-      formVisibleOnPage: "landing-page"
-    });
-  }
-
-  kegListButtonClick = () => {
-    if (this.state.selectedKeg != null) {
-      this.setState({
-        formVisibleOnPage: "keg-list",
-        selectedKeg: null
-      })
-    } else {
-      this.setState({
-        formVisibleOnPage: "keg-list"
-      });
-    }
-  }
-
-  addKegButtonClick = () => {
-    this.setState({
-      formVisibleOnPage: "add-keg"
-    });
-  }
 
   render () {
     let currentVisibleState = null;
@@ -130,7 +120,19 @@ class KegControl extends React.Component {
       </React.Fragment>
     );
   }
-
 }
+
+KegControl.propTypes = {
+  masterKegList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    masterKegList: state.masterKegList, 
+    formVisibleOnPage: state.formVisibleOnPage
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl)
 
 export default KegControl;
