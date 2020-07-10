@@ -19,10 +19,12 @@ body {
   background-color: white;
   color: black;
   border-radius: 8px;
-  opacity: .75;
+  opacity: .8;
   display: block;
-  
- 
+}
+
+.detail {
+  margin-bottom: 20px;
 }
 
 form {

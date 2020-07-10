@@ -69,8 +69,8 @@ class KegControl extends React.Component {
   render () {
     let currentVisibleState = null;
     let button1 = null;
-    let button1Text = null;
     let button2 = null;
+    let button3 = null;
     let header = null;
    
     if (this.props.selectedKeg != null) {
@@ -79,19 +79,17 @@ class KegControl extends React.Component {
         deleteKeg = {this.handleDeletingKeg}
         buyPint = {this.handleBuyingPint}
       />
-      
-      button1 = this.kegListButtonClick;
-      button1Text = "Return to Keg List";
+      button1 = <button onClick={this.kegListButtonClick}> Return to Keg List</button>
+    
     }
     else if (this.props.formVisibleOnPage === "see-form") {
       currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>
-      button1 = this.kegListButtonClick;
-      button1Text = "Return to Keg List"
+      button1 = <button onClick={this.kegListButtonClick}> Return to Keg List</button>
+      
     } 
     else if (this.props.formVisibleOnPage === 'landing-page') {
       currentVisibleState = <LandingPage/>;
-      button1 = this.kegListButtonClick;
-      button1Text = "View Our Keg List"
+      button1 = <button onClick={this.kegListButtonClick}>View Our Keg List</button>
     } 
     else if (this.props.formVisibleOnPage === 'keg-list') {
       currentVisibleState = <KegList 
@@ -99,18 +97,21 @@ class KegControl extends React.Component {
         onKegSelection={this.handleChangingSelectedKeg}
       />
       header = "MENU" 
-      button1 = this.landingPageButtonClick; 
-      button1Text = "View Home Page";
-      button2 = <button onClick={this.addKegButtonClick}>Add Keg</button>
+      button2 = <button onClick={this.landingPageButtonClick}>Home</button>
+      button3 = <button onClick={this.addKegButtonClick}>Add Keg</button>
     } 
       
     return(
       <React.Fragment>
         <h4>{header}</h4>
+        <div className="button-wrapper">
+          {button3}
+          {button2}
+        </div>
+       
         {currentVisibleState}
         <div className="button-wrapper">
-          <button onClick={button1}>{button1Text}</button>
-          {button2}
+          {button1}
         </div>
       </React.Fragment>
     );
