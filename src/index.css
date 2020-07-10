@@ -1,4 +1,5 @@
 body {
+  cursor: default;
   padding: 70px;
   background-color: black;
   background-image: url("https://images.squarespace-cdn.com/content/v1/54d01634e4b08eff64e8d91e/1558460833348-OAIV861OLKCYM6V6B2MB/ke17ZwdGBToddI8pDm48kB6N0s8PWtX2k_eW8krg04V7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1URWK2DJDpV27WG7FD5VZsfFVodF6E_6KI51EW1dNf095hdyjf10zfCEVHp52s13p8g/Beer+Taps+Web.jpg?format=1500w");
@@ -56,6 +57,23 @@ button {
   border: 1px solid black;
   margin-right: 6px;
   margin-top: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+button:focus {outline: 0}
+
+button.top-button {
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 0px
 }
 
 .button-wrapper {

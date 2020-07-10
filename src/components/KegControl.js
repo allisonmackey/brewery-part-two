@@ -97,8 +97,8 @@ class KegControl extends React.Component {
         onKegSelection={this.handleChangingSelectedKeg}
       />
       header = "MENU" 
-      button2 = <button onClick={this.landingPageButtonClick}>Home</button>
-      button3 = <button onClick={this.addKegButtonClick}>Add Keg</button>
+      button2 = <button className ='top-button' onClick= {this.landingPageButtonClick}>HOME</button>
+      button3 = <button className ='top-button' onClick= {this.addKegButtonClick}>ADD KEG   ||</button>
     } 
       
     return(
