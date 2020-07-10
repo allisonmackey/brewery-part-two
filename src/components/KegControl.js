@@ -5,6 +5,8 @@ import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail"
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import * as c from './../actions/ActionTypes'
+import * as a from './../actions/index';
 
 class KegControl extends React.Component {
   constructor(props) {
@@ -15,46 +17,56 @@ class KegControl extends React.Component {
   }
   
   landingPageButtonClick = () => {
-    this.setState({
-      formVisibleOnPage: "landing-page"
-    });
+    const {dispatch} = this.props;
+    const action = {
+      type: c.LANDING_PAGE
+    }
+    dispatch(action);
   }
 
   addKegButtonClick = () => {
-    this.setState({
-      formVisibleOnPage: "add-keg"
-    });
+    const {dispatch} = this.props;
+    const action = {
+      type: c.SEE_FORM
+    }
+    dispatch(action);
   }
-
 
   kegListButtonClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        formVisibleOnPage: "keg-list",
         selectedKeg: null
       })
+      const {dispatch} = this.props;
+      const action = {
+        type: c.KEG_LIST
+      }
+      dispatch(action);
+
     } else {
-      this.setState({
-        formVisibleOnPage: "keg-list"
-      });
+      const {dispatch} = this.props;
+      const action = {
+        type: c.KEG_LIST
+      }
+      dispatch(action);
     }
   }
 
-  //  eventual code for buying a pint? might need to go in kegList instead. 
-  handleBuyingPint = (index) => {
-    const currentPints = [...this.state.kegList];
-    if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
-      currentPints[index].pintsLeft = "Out of Stock";
-      this.setState({
-        kegList: currentPints
-      });
-    } else {
-      currentPints[index].pintsLeft -= 1;
-      this.setState({
-        kegList: currentPints
-      });
-    }
-  }
+  // need to move to reducer/keg-list-reducer
+  // handleBuyingPint = (index) => {
+  //   const currentPints = [...this.state.kegList];
+  //   if (currentPints[index].pintsLeft <= 1 || isNaN(currentPints[index].pintsLeft)) {
+  //     currentPints[index].pintsLeft = "Out of Stock";
+  //     this.setState({
+  //       kegList: currentPints
+  //     });
+  //   } else {
+  //     currentPints[index].pintsLeft -= 1;
+  //     this.setState({
+  //       kegList: currentPints
+  //     });
+  //   }
+  // }
 
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.kegList.filter(keg => keg.id === id)[0];

@@ -11,7 +11,7 @@ export default (state = 'landing-page', action) => {
     case c.SEE_FORM:
       state = 'see-form'
       return state;
-  default: 
+    default: 
     return state;
   }
 }

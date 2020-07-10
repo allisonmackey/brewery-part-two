@@ -12,7 +12,7 @@ describe('formVisibleReducer', () => {
     expect(formVisibleReducer(false, {type: c.LANDING_PAGE})).toEqual('landing-page');
   });    
   test('should change form visiblility state to add-keg when action type is equal to SEE_FORM', () => {
-    expect(formVisibleReducer(false, {type:c.SEE_FORM})).toEqual('see-form');
+    expect(formVisibleReducer(false, {type: c.SEE_FORM})).toEqual('see-form');
   });    
   
 });  
