@@ -64,8 +64,6 @@ class KegControl extends React.Component {
     let button2 = null;
     let header = null;
    
-    // let button2Text = null;
-
     if (this.props.selectedKeg != null) {
       currentVisibleState = <KegDetail 
       keg = {this.props.masterKegList[`${this.props.selectedKeg}`]}/>
