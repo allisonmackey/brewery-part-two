@@ -13,6 +13,13 @@ export const addKeg = (keg) => {
   }
 }
 
+export const deleteKeg = (id) => {
+  return {
+    type: c.DELETE_KEG, 
+    id: id
+  }
+
+}
 export const buyPint = (keg) => {
   const { name, brand, price, alcoholContent, pintsLeft, id} = keg;
   return {

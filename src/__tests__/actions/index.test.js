@@ -1,15 +1,24 @@
 import * as actions from '../../actions';
 
 describe('brewery actions', () => {
-  it('addKeg should create an ADD_KEG action', () => {
-    let keg = {
-      name: "Lil' Squeezy Juicy Ale",
-      brand: "Deschutes",
-      price: 150,
-      alcoholContent: 5,
-      pintsLeft: 124,
+  let keg = {
+    name: "Lil' Squeezy Juicy Ale",
+    brand: "Deschutes",
+    price: 150,
+    alcoholContent: 5,
+    pintsLeft: 124,
+    id: 4
+  }
+
+  it('deleteKeg should create an DELETE_KEG action', () => {
+    expect(actions.deleteKeg(keg.id)).toEqual({
+      type: "DELETE_KEG",
       id: 4
-    }
+    });
+  });
+
+  it('addKeg should create an ADD_KEG action', () => {
+
     expect(actions.addKeg(keg)).toEqual({
       type: 'ADD_KEG',
       name: "Lil' Squeezy Juicy Ale",
