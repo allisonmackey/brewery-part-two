@@ -6,6 +6,9 @@ export default (state = 'landing-page', action) => {
     case 'LANDING_PAGE':
       state = 'landing-page';
       return state;
+    case 'ADD_KEG':
+      state = 'add-keg'
+      return state;
   default: 
     return state;
   }
