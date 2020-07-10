@@ -1,0 +1,53 @@
+body {
+  padding: 70px;
+  background-color: black;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/54d01634e4b08eff64e8d91e/1558460833348-OAIV861OLKCYM6V6B2MB/ke17ZwdGBToddI8pDm48kB6N0s8PWtX2k_eW8krg04V7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1URWK2DJDpV27WG7FD5VZsfFVodF6E_6KI51EW1dNf095hdyjf10zfCEVHp52s13p8g/Beer+Taps+Web.jpg?format=1500w");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 70vw;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.box {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+  opacity: .85;
+  display: block;
+}
+
+h4 {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-right: 6px;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 15px;
+}
+
+
