@@ -17,9 +17,7 @@ class KegControl extends React.Component {
   
   landingPageButtonClick = () => {
     const {dispatch} = this.props;
-    const action = {
-      type: c.LANDING_PAGE
-    }
+    const action = a.seeLandingPage()
     dispatch(action);
   }
 

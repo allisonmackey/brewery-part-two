@@ -13,14 +13,14 @@ export const addKeg = (keg) => {
   }
 }
 
-export const seePostList = () => ({
-  type: c.POST_LIST
+export const seeKegList = () => ({
+  type: c.KEG_LIST
 })
 
 export const seeLandingPage = () => ({
   type: c.LANDING_PAGE
 })
 
-export const seeAddKegForm = () => ({
+export const seeForm = () => ({
   type: c.SEE_FORM
 })
