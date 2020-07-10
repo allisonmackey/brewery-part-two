@@ -8,11 +8,11 @@ describe('formVisibleReducer', () => {
   test('should change form visiblility state to keg-list when action type is equal to KEG_LIST', () => {
     expect(formVisibleReducer(false, {type: c.KEG_LIST} )).toEqual('keg-list');
   });
-  // test('should change form visiblility state back to landing-page when action type is equal to LANDING_PAGE', () => {
-  //   expect(formVisibleReducer(false, {type:'LANDING_PAGE'})).toEqual('landing-page');
-  // });    
-  // test('should change form visiblility state to add-keg when action type is equal to SEE_FORM', () => {
-  //   expect(formVisibleReducer(false, {type:'SEE_FORM'})).toEqual('SEE_FORM');
-  // });    
+  test('should change form visiblility state back to landing-page when action type is equal to LANDING_PAGE', () => {
+    expect(formVisibleReducer(false, {type: c.LANDING_PAGE})).toEqual('landing-page');
+  });    
+  test('should change form visiblility state to add-keg when action type is equal to SEE_FORM', () => {
+    expect(formVisibleReducer(false, {type:c.SEE_FORM})).toEqual('see-form');
+  });    
   
 });  
