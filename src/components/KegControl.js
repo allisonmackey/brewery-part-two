@@ -23,9 +23,7 @@ class KegControl extends React.Component {
 
   addKegButtonClick = () => {
     const {dispatch} = this.props;
-    const action = {
-      type: c.SEE_FORM
-    }
+    const action = a.seeForm()
     dispatch(action);
   }
 
@@ -35,16 +33,12 @@ class KegControl extends React.Component {
         selectedKeg: null
       })
       const {dispatch} = this.props;
-      const action = {
-        type: c.KEG_LIST
-      }
+      const action = a.seeKegList();
       dispatch(action);
 
     } else {
       const {dispatch} = this.props;
-      const action = {
-        type: c.KEG_LIST
-      }
+      const action = a.seeKegList();
       dispatch(action);
     }
   }
@@ -73,11 +67,11 @@ class KegControl extends React.Component {
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newKegList = this.state.kegList.concat(newKeg);
-    this.setState({
-      kegList: newKegList,
-      formVisibleOnPage: "keg-list"
-    });
+    const {dispatch} = this.props;
+    const action = a.addKeg(newKeg)
+    dispatch(action)
+    const action2 = a.seeKegList()
+    dispatch(action2)
   }
 
 
