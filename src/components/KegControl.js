@@ -98,7 +98,7 @@ class KegControl extends React.Component {
         kegList = {this.props.masterKegList} 
         onKegSelection={this.handleChangingSelectedKeg}
       />
-      header = "MENU"
+      header = "MENU" 
       button1 = this.landingPageButtonClick; 
       button1Text = "View Home Page";
       button2 = <button onClick={this.addKegButtonClick}>Add Keg</button>
