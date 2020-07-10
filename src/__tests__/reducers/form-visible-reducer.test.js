@@ -8,4 +8,4 @@ describe('formVisibleReducer', () => {
     expect(formVisibleReducer(false, {type:'KEG_LIST'})).toEqual('keg-list');
   });
   
-});
+});  
