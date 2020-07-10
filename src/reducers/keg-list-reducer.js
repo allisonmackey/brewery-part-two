@@ -38,6 +38,11 @@ export default (state = {
           id: id
         }
       })
+    case "DELETE_KEG":
+      const newState = {...state};
+      delete newState[id];
+      return newState;
+  
     case "BUY_PINT":
       return Object.assign({}, state, {
         [id]: {
