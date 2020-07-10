@@ -1,4 +1,4 @@
-import * as actions from './../actions';
+import * as actions from '../../actions';
 
 describe('brewery actions', () => {
   it('addKeg should create an ADD_KEG action', () => {
