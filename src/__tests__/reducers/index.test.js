@@ -6,6 +6,11 @@ import kegListReducer from '../../reducers/keg-list-reducer';
 let store = createStore(rootReducer)
 
 describe('rootReducer', () => {
+
+  test('should check that inital state of kegListReducer matches root reducer', ()=> {
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, {type:null}));
+  });
+
   test('should check that initial state of formVisibleReducer matches root reducer', () => {
     const action = {
       type: 'LANDING_PAGE'
