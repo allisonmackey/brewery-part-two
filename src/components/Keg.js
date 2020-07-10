@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Keg(props){
   function buyPint(){
-    props.buy(props.index)
+    props.buy(props)
   };
   return(
     <React.Fragment>
