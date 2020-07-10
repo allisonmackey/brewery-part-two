@@ -26,6 +26,14 @@ export const buyPint = (keg) => {
   }
 }
 
+export const selectKeg = (keg) => {
+  const{id} = keg
+  return {
+    type: c.SELECTED_KEG, 
+    id: id
+  }
+}
+
 export const seeKegList = () => ({
   type: c.KEG_LIST
 })

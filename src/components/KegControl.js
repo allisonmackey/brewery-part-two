@@ -62,9 +62,6 @@ class KegControl extends React.Component {
     const {dispatch} = this.props;
     const action = a.buyPint(keg) 
     dispatch(action)
-    console.log(keg)
-    const action2 = a.seeKegList()
-    dispatch(action2)
   }
 
 

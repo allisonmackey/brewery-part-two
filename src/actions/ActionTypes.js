@@ -3,4 +3,4 @@ export const LANDING_PAGE = 'LANDING_PAGE';
 export const KEG_LIST = 'KEG_LIST';
 export const SEE_FORM = 'SEE_FORM';
 export const BUY_PINT = 'BUY_PINT';
-export const SELECT_KEG = 'SELECT_KEG';
+export const SELECTED_KEG = 'SELECTED_KEG';
